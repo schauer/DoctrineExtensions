@@ -136,9 +136,7 @@ class TimestampableListener extends MappedEventSubscriber
 
             if (isset($config['update'])) {
                 foreach ($config['update'] as $field) {
-                    if ($meta->getReflectionProperty($field)->getValue($object) === null) { // let manual values
-                        $this->updateField($object, $ea, $meta, $field);
-                    }
+                    $this->updateField($object, $ea, $meta, $field);
                 }
             }
 
